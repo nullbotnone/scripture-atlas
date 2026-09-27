@@ -115,7 +115,7 @@ const UI = {
     heroCopy: "From Genesis to Revelation, follow every thread that crosses from one passage to another, and read the Bible again as a book that answers itself. Pick a verse and see where it takes you.",
     heroStart: 'Start exploring <span aria-hidden="true">↗</span>', heroMethod: 'About the data and method <span aria-hidden="true">↘</span>',
     statsLabel: "Dataset size", statVerses: "verses", statRefs: "raw cross-references", statBooks: "books", ot: "Old Testament", nt: "New Testament",
-    workspaceTitle: "Explore the shape of Scripture", workspaceLede: "One set of cross-references at three scales:<br/>the whole picture, book against book, verse by verse.",
+    workspaceTitle: "Explore the shape of Scripture", workspaceLede: "One set of cross-references at three scales: <br/>the whole picture, book against book, verse by verse.",
     loading: "Loading data…", tabsLabel: "Visualization mode", tabArcs: "Arc of connections", tabMatrix: "Book matrix", tabPath: "Verse paths",
     arcTitle: "The whole Bible under one arch of connections.",
     arcCopy: "Each arc joins two verses; the higher the arc, the farther apart they sit. Click the timeline below or search for a verse to trace its threads.",
@@ -295,7 +295,7 @@ function arcPath(ctx, a, b, width, base) {
   const left = 16 + (Math.min(a, b) / state.meta.verseCount) * (width - 32);
   const right = 16 + (Math.max(a, b) / state.meta.verseCount) * (width - 32);
   const distance = right - left;
-  const rise = clamp(Math.sqrt(distance / width) * (base - 26) * 1.45, 10, base - 26);
+  const rise = clamp(Math.sqrt(distance / width) * (base - 46) * 1.45, 10, base - 46); // keep the peaks clear of the counter at the top
   ctx.moveTo(left, base);
   ctx.quadraticCurveTo((left + right) / 2, base - rise * 2, right, base);
 }
@@ -481,7 +481,7 @@ function bindEvents() {
   $("#pathForm").addEventListener("submit", renderPath);
   $("#copyVerse").addEventListener("click", async () => { try { await navigator.clipboard.writeText(`${refOf(state.selected)} ${state.verses[state.selected]}`); toast(t().copied); } catch { toast(t().clipFail); } });
   $("#randomVerse").addEventListener("click", () => { const candidates = []; for (let i = 0; i < 300; i++) { const n = Math.floor(Math.random() * state.meta.verseCount); if (state.neighbors[n].length >= 10) candidates.push(n); } selectVerse(candidates[Math.floor(Math.random() * candidates.length)] ?? 0); });
-  $("#themeButton").addEventListener("click", () => { state.theme = state.theme === "dark" ? "light" : "dark"; document.documentElement.dataset.theme = state.theme; localStorage.setItem("scripture-atlas-theme", state.theme); });
+  $("#themeButton").addEventListener("click", () => { state.theme = state.theme === "dark" ? "light" : "dark"; document.documentElement.dataset.theme = state.theme; try { localStorage.setItem("slashai.theme", JSON.stringify(state.theme)); } catch { /* private mode */ } });
   $("#matrixCountButton").addEventListener("click", () => setMatrixMode("count"));
   $("#matrixDensityButton").addEventListener("click", () => setMatrixMode("density"));
   const arc = $("#arcCanvas");
@@ -615,7 +615,11 @@ async function load() {
   }
 }
 
-state.theme = localStorage.getItem("scripture-atlas-theme") === "light" ? "light" : "dark";
+// Shared with the other slashai.app pages; "auto" or nothing follows the system.
+state.theme = (() => {
+  try { const saved = JSON.parse(localStorage.getItem("slashai.theme")); if (saved === "light" || saved === "dark") return saved; } catch { /* private mode */ }
+  return matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+})();
 document.documentElement.dataset.theme = state.theme;
 $("#langSeg").addEventListener("click", (event) => { const button = event.target.closest("button"); if (button && button.dataset.lang !== state.lang) setLang(button.dataset.lang); });
 applyStatic();
