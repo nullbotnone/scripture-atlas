@@ -1,6 +1,6 @@
 # 经纬圣经 · Scripture Atlas
 
-一个静态、可交互的整本圣经交叉引用地图。线上地址：<https://slashai.app/bible-wiki/>。
+一个静态、可交互的整本圣经交叉引用地图。线上地址：<https://slashai.app/scripture-atlas/>。
 
 ## 探索方式
 
@@ -42,4 +42,4 @@ python3 scripts/build_translations.py /path/to/chi-cuv.usfx.xml /path/to/eng-kjv
 
 ## 部署
 
-本仓库自己开启了 GitHub Pages（`main` 分支根目录），推送 `main` 即发布到 `https://slashai.app/bible-wiki/`，与其他工具一样。主页仓库只放入口链接，不存放本站文件。
+本仓库自己开启了 GitHub Pages（`main` 分支根目录），推送 `main` 即发布到 `https://slashai.app/scripture-atlas/`，与其他工具一样。主页仓库只放入口链接，不存放本站文件。
