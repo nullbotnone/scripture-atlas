@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#071013" />
-    <meta name="description" content="经纬圣经：探索整本圣经经文之间的关联、跨卷回声与两节经文之间的路径。" />
+    <meta name="description" id="metaDescription" content="经纬圣经：探索整本圣经经文之间的关联、跨卷回声与两节经文之间的路径。" />
     <meta property="og:title" content="经纬圣经 · Scripture Atlas" />
     <meta property="og:description" content="31,100 节经文，34 万余条交叉引用，一张可以亲自探索的圣经关系图。" />
     <title>经纬圣经 · Scripture Atlas | slashai.app</title>
@@ -12,64 +12,64 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#atlas">跳到探索工具</a>
+    <a class="skip-link" href="#atlas" data-i18n="skip">跳到探索工具</a>
     <header class="topbar shell">
-      <a class="brand" href="https://nullbotnone.github.io/" aria-label="返回 slashai.app 首页">
+      <a class="brand" href="https://nullbotnone.github.io/" aria-label="返回 slashai.app 首页" data-i18n-attr="aria-label:brandLabel">
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 2.5c1.15 7.35 3.15 9.95 8.9 13.5-5.75 3.55-7.75 6.15-8.9 13.5-1.15-7.35-3.15-9.95-8.9-13.5 5.75-3.55 7.75-6.15 8.9-13.5Z" /></svg></span>
         <span>slashai<span class="brand-dim">.app</span></span>
       </a>
-      <nav class="topnav" aria-label="页面导航"><a href="#atlas">探索</a><a href="#discoveries">发现</a><a href="#method">方法</a></nav>
-      <div class="top-actions"><span class="project-name">SCRIPTURE ATLAS <span class="live-dot"></span></span><button id="themeButton" class="theme-button" type="button" aria-label="切换明暗主题" title="切换明暗主题"><span class="theme-icon"></span></button></div>
+      <nav class="topnav" aria-label="页面导航" data-i18n-attr="aria-label:navLabel"><a href="#atlas" data-i18n="navExplore">探索</a><a href="#discoveries" data-i18n="navDiscover">发现</a><a href="#method" data-i18n="navMethod">方法</a></nav>
+      <div class="top-actions"><div class="seg" role="group" aria-label="Language" id="langSeg"><button type="button" data-lang="zh" aria-pressed="true">简</button><button type="button" data-lang="tw" aria-pressed="false">繁</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div><span class="project-name">SCRIPTURE ATLAS <span class="live-dot"></span></span><button id="themeButton" class="theme-button" type="button" aria-label="切换明暗主题" title="切换明暗主题" data-i18n-attr="aria-label:themeLabel title:themeLabel"><span class="theme-icon"></span></button></div>
     </header>
 
     <main>
       <section class="hero shell" aria-labelledby="main-title">
         <div class="hero-main">
           <p class="eyebrow"><span></span> 01 / SCRIPTURE ATLAS</p>
-          <h1 id="main-title">让经文之间的<br/><em>回声</em>，看得见。</h1>
-          <p class="hero-copy">从创世记到启示录，沿着每一条跨越篇章的线索，重新阅读这本彼此呼应的书。选一节经文，看看它把你带向哪里。</p>
-          <div class="hero-actions"><a class="primary-button" href="#atlas">开始探索 <span aria-hidden="true">↗</span></a><a class="subtle-link" href="#method">了解数据与方法 <span aria-hidden="true">↘</span></a></div>
+          <h1 id="main-title" data-i18n="heroTitle">让经文之间的<br/><em>回声</em>，看得见。</h1>
+          <p class="hero-copy" data-i18n="heroCopy">从创世记到启示录，沿着每一条跨越篇章的线索，重新阅读这本彼此呼应的书。选一节经文，看看它把你带向哪里。</p>
+          <div class="hero-actions"><a class="primary-button" href="#atlas" data-i18n="heroStart">开始探索 <span aria-hidden="true">↗</span></a><a class="subtle-link" href="#method" data-i18n="heroMethod">了解数据与方法 <span aria-hidden="true">↘</span></a></div>
         </div>
-        <div class="hero-aside" aria-label="数据规模"><p class="micro">A LIVING MAP OF SCRIPTURE</p><div class="hero-rule"></div><div class="hero-numbers"><div><strong id="statVerses">31,100</strong><span>节经文</span></div><div><strong id="statReferences">344,799</strong><span>条原始交叉引用</span></div><div><strong id="statBooks">66</strong><span>卷书</span></div></div><div class="hero-aside-footer"><span>旧约</span><i></i><span>新约</span><span class="hero-star">✦</span></div></div>
+        <div class="hero-aside" aria-label="数据规模" data-i18n-attr="aria-label:statsLabel"><p class="micro">A LIVING MAP OF SCRIPTURE</p><div class="hero-rule"></div><div class="hero-numbers"><div><strong id="statVerses">31,100</strong><span data-i18n="statVerses">节经文</span></div><div><strong id="statReferences">344,799</strong><span data-i18n="statRefs">条原始交叉引用</span></div><div><strong id="statBooks">66</strong><span data-i18n="statBooks">卷书</span></div></div><div class="hero-aside-footer"><span data-i18n="ot">旧约</span><i></i><span data-i18n="nt">新约</span><span class="hero-star">✦</span></div></div>
       </section>
 
       <section class="workspace shell" id="atlas" aria-labelledby="workspace-heading">
-        <div class="section-heading"><div><p class="section-index">01 / EXPLORER</p><h2 id="workspace-heading">探索经文的结构</h2></div><p>同一批经文关联，以三种尺度呈现：<br/>看全貌、比较书卷、沿线索逐节行走。</p></div>
+        <div class="section-heading"><div><p class="section-index">01 / EXPLORER</p><h2 id="workspace-heading" data-i18n="workspaceTitle">探索经文的结构</h2></div><p data-i18n="workspaceLede">同一批经文关联，以三种尺度呈现：<br/>看全貌、比较书卷、沿线索逐节行走。</p></div>
         <div class="explorer">
           <div class="explorer-main">
-            <div class="explorer-bar"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>scripture / atlas</span><span id="loadState" role="status">正在载入数据…</span></div>
-            <div class="tabs" role="tablist" aria-label="可视化模式"><button class="tab active" role="tab" aria-selected="true" aria-controls="arcPanel" id="arcTab" data-tab="arcs">01 <span>关联穹顶</span></button><button class="tab" role="tab" aria-selected="false" aria-controls="matrixPanel" id="matrixTab" data-tab="matrix">02 <span>书卷矩阵</span></button><button class="tab" role="tab" aria-selected="false" aria-controls="pathPanel" id="pathTab" data-tab="path">03 <span>经文路径</span></button></div>
+            <div class="explorer-bar"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>scripture / atlas</span><span id="loadState" role="status" data-i18n="loading">正在载入数据…</span></div>
+            <div class="tabs" role="tablist" aria-label="可视化模式" data-i18n-attr="aria-label:tabsLabel"><button class="tab active" role="tab" aria-selected="true" aria-controls="arcPanel" id="arcTab" data-tab="arcs">01 <span data-i18n="tabArcs">关联穹顶</span></button><button class="tab" role="tab" aria-selected="false" aria-controls="matrixPanel" id="matrixTab" data-tab="matrix">02 <span data-i18n="tabMatrix">书卷矩阵</span></button><button class="tab" role="tab" aria-selected="false" aria-controls="pathPanel" id="pathTab" data-tab="path">03 <span data-i18n="tabPath">经文路径</span></button></div>
             <div class="panel" id="arcPanel" role="tabpanel" aria-labelledby="arcTab">
-              <div class="panel-intro"><div><p class="micro accent">THE ARCH OF CONNECTIONS</p><h3>整本圣经，一道关系的穹顶。</h3><p>每一道弧线连接两节经文；弧线越高，跨越的篇幅越远。点击下方时间轴或搜索经文，追踪属于它的线索。</p></div><span class="panel-ornament" aria-hidden="true">✳</span></div>
+              <div class="panel-intro"><div><p class="micro accent">THE ARCH OF CONNECTIONS</p><h3 data-i18n="arcTitle">整本圣经，一道关系的穹顶。</h3><p data-i18n="arcCopy">每一道弧线连接两节经文；弧线越高，跨越的篇幅越远。点击下方时间轴或搜索经文，追踪属于它的线索。</p></div><span class="panel-ornament" aria-hidden="true">✳</span></div>
               <div class="filters">
-                <label>关系范围<select id="relationFilter"><option value="all">全部关联</option><option value="crossbook">跨书卷</option><option value="testament">跨新旧约</option><option value="within">同一书卷</option></select></label>
-                <label>最低票数<select id="voteFilter"><option value="1">全部正票</option><option value="20" selected>20 票以上</option><option value="50">50 票以上</option><option value="100">100 票以上</option></select></label>
-                <label>聚焦书卷<select id="bookFilter"><option value="all">全部 66 卷</option></select></label>
+                <label><span data-i18n="relation">关系范围</span><select id="relationFilter"><option value="all" data-i18n="relAll">全部关联</option><option value="crossbook" data-i18n="relCross">跨书卷</option><option value="testament" data-i18n="relTestament">跨新旧约</option><option value="within" data-i18n="relWithin">同一书卷</option></select></label>
+                <label><span data-i18n="votes">最低票数</span><select id="voteFilter"><option value="1" data-i18n="voteAll">全部正票</option><option value="20" selected data-i18n="vote20">20 票以上</option><option value="50" data-i18n="vote50">50 票以上</option><option value="100" data-i18n="vote100">100 票以上</option></select></label>
+                <label><span data-i18n="focusBook">聚焦书卷</span><select id="bookFilter"><option value="all" data-i18n="allBooks">全部 66 卷</option></select></label>
               </div>
-              <div class="arc-stage" id="arcStage"><canvas id="arcCanvas" aria-label="圣经经文交叉引用弧线图。可通过下方筛选和经文搜索操作。"></canvas><div class="arc-tooltip" id="arcTooltip" hidden></div><div class="arc-stage-top"><span>GENESIS → REVELATION</span><span id="arcCount">—</span></div><div class="axis-caption"><span>旧约 / 39 卷</span><span>新约 / 27 卷</span></div></div>
-              <div class="book-axis" id="bookAxis" aria-label="按书卷位置选择经文"></div>
-              <div class="visual-caption"><span><i class="key key-teal"></i>旧约内部</span><span><i class="key key-gold"></i>跨新旧约</span><span><i class="key key-blue"></i>新约内部</span><span class="caption-right">视图最多绘制 6,000 条，统计基于完整数据</span></div>
+              <div class="arc-stage" id="arcStage"><canvas id="arcCanvas" aria-label="圣经经文交叉引用弧线图。可通过下方筛选和经文搜索操作。" data-i18n-attr="aria-label:arcCanvas"></canvas><div class="arc-tooltip" id="arcTooltip" hidden></div><div class="arc-stage-top"><span>GENESIS → REVELATION</span><span id="arcCount">—</span></div><div class="axis-caption"><span data-i18n="axisOT">旧约 / 39 卷</span><span data-i18n="axisNT">新约 / 27 卷</span></div></div>
+              <div class="book-axis" id="bookAxis" aria-label="按书卷位置选择经文" data-i18n-attr="aria-label:bookAxis"></div>
+              <div class="visual-caption"><span data-i18n="keyOld"><i class="key key-teal"></i>旧约内部</span><span data-i18n="keyCross"><i class="key key-gold"></i>跨新旧约</span><span data-i18n="keyNew"><i class="key key-blue"></i>新约内部</span><span class="caption-right" data-i18n="captionRight">视图最多绘制 6,000 条，统计基于完整数据</span></div>
             </div>
-            <div class="panel" id="matrixPanel" role="tabpanel" aria-labelledby="matrixTab" hidden><div class="panel-intro"><div><p class="micro accent">THE BOOK-TO-BOOK MAP</p><h3>哪些书卷，隔空对话？</h3><p>每个方格代表两卷书之间的关联。切换“关系密度”，可看见篇幅较短的书卷所隐藏的强联系。点击格子，回到弧线图细看。</p></div></div><div class="matrix-toolbar"><span>66 × 66 书卷</span><div class="switcher" role="group" aria-label="矩阵度量"><button id="matrixCountButton" class="selected" type="button" aria-pressed="true">关联数量</button><button id="matrixDensityButton" type="button" aria-pressed="false">关系密度</button></div></div><div class="matrix-scroll"><div class="matrix-stage"><canvas id="matrixCanvas" width="760" height="760" aria-label="66 卷书卷交叉引用矩阵。"></canvas><div class="matrix-tooltip" id="matrixTooltip" hidden></div></div></div><p class="matrix-note" id="matrixNote">移动到方格查看书卷之间的关联。</p></div>
-            <div class="panel" id="pathPanel" role="tabpanel" aria-labelledby="pathTab" hidden><div class="panel-intro"><div><p class="micro accent">A PATH THROUGH SCRIPTURE</p><h3>两节经文之间，有路可走吗？</h3><p>输入两个经文地址，寻找最多三步的交叉引用路径。中间的经文可能是你未曾想到的桥梁；点击节点即可继续探索。</p></div></div><form class="path-form" id="pathForm"><label>起点经文<input id="pathFrom" value="创世纪 1:1" autocomplete="off" placeholder="例如：创世纪 1:1" /></label><span class="path-arrow" aria-hidden="true">→</span><label>终点经文<input id="pathTo" value="约翰福音 1:1" autocomplete="off" placeholder="例如：约翰福音 1:1" /></label><button class="primary-button" type="submit">寻找路径 <span aria-hidden="true">↗</span></button></form><div class="path-result" id="pathResult" aria-live="polite"><p>载入完成后，按“寻找路径”开始。</p></div></div>
+            <div class="panel" id="matrixPanel" role="tabpanel" aria-labelledby="matrixTab" hidden><div class="panel-intro"><div><p class="micro accent">THE BOOK-TO-BOOK MAP</p><h3 data-i18n="matrixTitle">哪些书卷，隔空对话？</h3><p data-i18n="matrixCopy">每个方格代表两卷书之间的关联。切换“关系密度”，可看见篇幅较短的书卷所隐藏的强联系。点击格子，回到弧线图细看。</p></div></div><div class="matrix-toolbar"><span data-i18n="matrixSize">66 × 66 书卷</span><div class="switcher" role="group" aria-label="矩阵度量" data-i18n-attr="aria-label:matrixMetric"><button id="matrixCountButton" class="selected" type="button" aria-pressed="true" data-i18n="matrixCount">关联数量</button><button id="matrixDensityButton" type="button" aria-pressed="false" data-i18n="matrixDensity">关系密度</button></div></div><div class="matrix-scroll"><div class="matrix-stage"><canvas id="matrixCanvas" width="760" height="760" aria-label="66 卷书卷交叉引用矩阵。" data-i18n-attr="aria-label:matrixCanvas"></canvas><div class="matrix-tooltip" id="matrixTooltip" hidden></div></div></div><p class="matrix-note" id="matrixNote" data-i18n="matrixHint">移动到方格查看书卷之间的关联。</p></div>
+            <div class="panel" id="pathPanel" role="tabpanel" aria-labelledby="pathTab" hidden><div class="panel-intro"><div><p class="micro accent">A PATH THROUGH SCRIPTURE</p><h3 data-i18n="pathTitle">两节经文之间，有路可走吗？</h3><p data-i18n="pathCopy">输入两个经文地址，寻找最多三步的交叉引用路径。中间的经文可能是你未曾想到的桥梁；点击节点即可继续探索。</p></div></div><form class="path-form" id="pathForm"><label><span data-i18n="pathFrom">起点经文</span><input id="pathFrom" value="创世纪 1:1" autocomplete="off" placeholder="例如：创世纪 1:1" data-i18n-attr="placeholder:fromPh" /></label><span class="path-arrow" aria-hidden="true">→</span><label><span data-i18n="pathTo">终点经文</span><input id="pathTo" value="约翰福音 1:1" autocomplete="off" placeholder="例如：约翰福音 1:1" data-i18n-attr="placeholder:toPh" /></label><button class="primary-button" type="submit" data-i18n="pathSubmit">寻找路径 <span aria-hidden="true">↗</span></button></form><div class="path-result" id="pathResult" aria-live="polite"><p data-i18n="pathIdle">载入完成后，按“寻找路径”开始。</p></div></div>
           </div>
-          <aside class="detail-rail" aria-label="经文详情"><div class="detail-top"><span class="micro">VERSE FOCUS / 经文焦点</span><span class="detail-spark" aria-hidden="true">✦</span></div><form id="verseSearchForm" class="verse-search"><label for="verseSearch">前往某节经文</label><div><input id="verseSearch" value="创世纪 1:1" autocomplete="off" placeholder="如：约翰福音 3:16" /><button type="submit" aria-label="搜索经文">↗</button></div><p id="searchHelp">支持中文书名或英文缩写，如 John 3:16</p></form><div class="verse-card"><p class="micro accent">SELECTED VERSE</p><h3 id="selectedRef">创世纪 1:1</h3><blockquote id="selectedText">正在载入经文…</blockquote><div class="verse-card-meta"><span id="selectedLinks">— 条关联</span><button type="button" id="copyVerse">复制 ↗</button></div></div><div class="related-header"><div><p class="micro">STRONGEST LINKS</p><h4>相连的经文</h4></div><span id="relatedCount">—</span></div><div class="related-list" id="relatedList"><p class="loading-message">正在整理关联…</p></div><button id="randomVerse" class="rail-random" type="button">偶遇一节经文 <span aria-hidden="true">↗</span></button></aside>
+          <aside class="detail-rail" aria-label="经文详情" data-i18n-attr="aria-label:detailLabel"><div class="detail-top"><span class="micro" data-i18n="detailTop">VERSE FOCUS / 经文焦点</span><span class="detail-spark" aria-hidden="true">✦</span></div><form id="verseSearchForm" class="verse-search"><label for="verseSearch" data-i18n="searchLabel">前往某节经文</label><div><input id="verseSearch" value="创世纪 1:1" autocomplete="off" placeholder="如：约翰福音 3:16" data-i18n-attr="placeholder:searchPh" /><button type="submit" aria-label="搜索经文" data-i18n-attr="aria-label:searchButton">↗</button></div><p id="searchHelp" data-i18n="searchHelp">支持中文书名或英文缩写，如 John 3:16</p></form><div class="verse-card"><p class="micro accent">SELECTED VERSE</p><h3 id="selectedRef">创世纪 1:1</h3><blockquote id="selectedText" data-i18n="loadingVerse">正在载入经文…</blockquote><div class="verse-card-meta"><span id="selectedLinks">— 条关联</span><button type="button" id="copyVerse" data-i18n="copy">复制 ↗</button></div></div><div class="related-header"><div><p class="micro">STRONGEST LINKS</p><h4 data-i18n="related">相连的经文</h4></div><span id="relatedCount">—</span></div><div class="related-list" id="relatedList"><p class="loading-message" data-i18n="loadingLinks">正在整理关联…</p></div><button id="randomVerse" class="rail-random" type="button" data-i18n="random">偶遇一节经文 <span aria-hidden="true">↗</span></button></aside>
         </div>
       </section>
 
-      <section class="discoveries shell" id="discoveries" aria-labelledby="discoveries-heading"><div class="section-heading"><div><p class="section-index">02 / OBSERVATIONS</p><h2 id="discoveries-heading">从图形里，发现问题</h2></div><p>以下数字由完整关联网络计算。它们是阅读的起点，而不是对经文本意的自动判定。</p></div><div class="findings" id="findings"><div class="finding loading-message">正在计算跨卷关系…</div></div><div class="prompt-line"><span>试着追问</span><p>为什么有些新约书卷频繁回望某一卷旧约？一节经文的“邻居”究竟在谈相同的词、事件，还是神学主题？</p></div></section>
+      <section class="discoveries shell" id="discoveries" aria-labelledby="discoveries-heading"><div class="section-heading"><div><p class="section-index">02 / OBSERVATIONS</p><h2 id="discoveries-heading" data-i18n="discTitle">从图形里，发现问题</h2></div><p data-i18n="discLede">以下数字由完整关联网络计算。它们是阅读的起点，而不是对经文本意的自动判定。</p></div><div class="findings" id="findings"><div class="finding loading-message" data-i18n="loadingFindings">正在计算跨卷关系…</div></div><div class="prompt-line"><span data-i18n="tryAsking">试着追问</span><p data-i18n="prompt">为什么有些新约书卷频繁回望某一卷旧约？一节经文的“邻居”究竟在谈相同的词、事件，还是神学主题？</p></div></section>
 
       <section class="method shell" id="method" aria-labelledby="method-heading">
-        <div class="method-heading"><p class="section-index">03 / NOTES ON METHOD</p><h2 id="method-heading">看见连线，也看见它的边界。</h2></div>
+        <div class="method-heading"><p class="section-index">03 / NOTES ON METHOD</p><h2 id="method-heading" data-i18n="methodTitle">看见连线，也看见它的边界。</h2></div>
         <div class="method-grid">
-          <div><span class="method-no">01</span><h3>连线从哪里来</h3><p>交叉引用来自 <a href="https://www.openbible.info/labs/cross-references/" target="_blank" rel="noopener">OpenBible.info</a>（CC BY），主要汇集《经文汇编》及读者投票。票数表示该数据集中对关联的评价，不能当作释经结论或写作年代。</p></div>
-          <div><span class="method-no">02</span><h3>如何变成“节到节”</h3><p>原始引用有时指向一个节段。本站将节段展开成逐节连接，同一对经文去重并保留较高票数；<span id="nonpositivePairs">—</span> 个非正票配对未收入图中。原始行数与连线数因此不同。</p></div>
-          <div><span class="method-no">03</span><h3>经文与编号</h3><p>经文来自 <a href="https://github.com/seven1m/open-bibles" target="_blank" rel="noopener">open-bibles 的公版和合本简体</a>。不同版本的节号划分略有差异；与本版不匹配的 <span id="skippedRows">—</span> 行引用已跳过。请返回上下文阅读经文。</p></div>
+          <div><span class="method-no">01</span><h3 data-i18n="m1Title">连线从哪里来</h3><p data-i18n="m1Body">交叉引用来自 <a href="https://www.openbible.info/labs/cross-references/" target="_blank" rel="noopener">OpenBible.info</a>（CC BY），主要汇集《经文汇编》及读者投票。票数表示该数据集中对关联的评价，不能当作释经结论或写作年代。</p></div>
+          <div><span class="method-no">02</span><h3 data-i18n="m2Title">如何变成“节到节”</h3><p data-i18n="m2Body">原始引用有时指向一个节段。本站将节段展开成逐节连接，同一对经文去重并保留较高票数；<span id="nonpositivePairs">—</span> 个非正票配对未收入图中。原始行数与连线数因此不同。</p></div>
+          <div><span class="method-no">03</span><h3 data-i18n="m3Title">经文与编号</h3><p data-i18n="m3Body">经文来自 <a href="https://github.com/seven1m/open-bibles" target="_blank" rel="noopener">open-bibles 的公版和合本简体</a>。不同版本的节号划分略有差异；与本版不匹配的 <span id="skippedRows">—</span> 行引用已跳过。请返回上下文阅读经文。</p></div>
         </div>
-        <div class="source-line"><span>OPEN DATA / OPEN QUESTIONS</span><a href="https://github.com/nullbotnone/bible-wiki" target="_blank" rel="noopener">查看源码 ↗</a></div>
+        <div class="source-line"><span>OPEN DATA / OPEN QUESTIONS</span><a href="https://github.com/nullbotnone/bible-wiki" target="_blank" rel="noopener" data-i18n="sourceLink">查看源码 ↗</a></div>
       </section>
     </main>
-    <footer class="footer shell"><a href="https://nullbotnone.github.io/">slashai.app</a><p>愿每一次新的连接，带你回到经文本身。</p><span>Scripture Atlas · 2026</span></footer>
+    <footer class="footer shell"><a href="https://nullbotnone.github.io/">slashai.app</a><p data-i18n="footer">愿每一次新的连接，带你回到经文本身。</p><span>Scripture Atlas · 2026</span></footer>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
     <script type="module" src="app.js"></script>
   </body>
