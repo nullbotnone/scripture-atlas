@@ -1,6 +1,6 @@
 # 经纬圣经 · Scripture Atlas
 
-一个静态、可交互的整本圣经交叉引用地图，作为 [slashai.app](https://nullbotnone.github.io/) 的子页面部署于 `/bible-wiki/`。
+一个静态、可交互的整本圣经交叉引用地图。此仓库保存源码；主页子页面 `/bible-wiki/` 的接入改动见 [主页仓库 PR #1](https://github.com/nullbotnone/nullbotnone.github.io/pull/1)。
 
 ## 探索方式
 
@@ -30,4 +30,4 @@ python3 scripts/build_data.py /path/to/cross-references.zip /path/to/chi-cuv-sim
 
 ## 部署
 
-推送到 `main` 后，`.github/workflows/pages.yml` 会将仓库根目录部署到 GitHub Pages。仓库 Pages 设置需选择 **GitHub Actions** 作为发布源。
+将 `index.html`、`app.js`、`styles.css`、`favicon.svg` 和 `data/` 同步到主页仓库的 `bible-wiki/` 目录，再推送主页仓库的 `main` 分支。主页仓库现有的 GitHub Pages 会发布它，目标地址为 `https://slashai.app/bible-wiki/`。上述 PR 包含首次接入与主页入口。
